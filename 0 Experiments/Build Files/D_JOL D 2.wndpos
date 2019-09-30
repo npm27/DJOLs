@@ -27,12 +27,12 @@ Top=96
 Width=214
 Height=495
 [Object4]
-Name=Block1ITEMS
+Name=Block2ITEMS
 WindowState=0
 Left=0
 Top=0
-Width=845
-Height=305
+Width=770
+Height=339
 [Object5]
-Name=Block2ITEMS
+Name=Block1ITEMS
 WindowState=2
