@@ -119,7 +119,15 @@ Math6.OnsetToOnsetTime,3,1
 Math6.RESP,3,1
 Math6.RT,3,1
 Math6.RTTime,3,1
-Procedure[Trial],3,1
+pword3.RESP,3,0
+pword3.RT,3,0
+pword5.RESP,3,0
+pword5.RT,3,0
+Rword1.RESP,3,0
+Rword1.RT,3,0
+Rword2.RESP,3,0
+Rword2.RT,3,0
+Procedure[Trial],3,0
 Prompt,3,1
 pword1.ACC,3,1
 pword1.CRESP,3,1
@@ -148,8 +156,6 @@ pword3.DurationError,3,1
 pword3.OnsetDelay,3,1
 pword3.OnsetTime,3,1
 pword3.OnsetToOnsetTime,3,1
-pword3.RESP,3,0
-pword3.RT,3,0
 pword3.RTTime,3,1
 pword4.ACC,3,1
 pword4.CRESP,3,1
@@ -168,8 +174,6 @@ pword5.DurationError,3,1
 pword5.OnsetDelay,3,1
 pword5.OnsetTime,3,1
 pword5.OnsetToOnsetTime,3,1
-pword5.RESP,3,0
-pword5.RT,3,0
 pword5.RTTime,3,1
 pword6.ACC,3,1
 pword6.CRESP,3,1
@@ -195,8 +199,6 @@ Rword1.DurationError,3,1
 Rword1.OnsetDelay,3,1
 Rword1.OnsetTime,3,1
 Rword1.OnsetToOnsetTime,3,1
-Rword1.RESP,3,0
-Rword1.RT,3,0
 Rword1.RTTime,3,1
 Rword2.ACC,3,1
 Rword2.CRESP,3,1
@@ -205,8 +207,6 @@ Rword2.DurationError,3,1
 Rword2.OnsetDelay,3,1
 Rword2.OnsetTime,3,1
 Rword2.OnsetToOnsetTime,3,1
-Rword2.RESP,3,0
-Rword2.RT,3,0
 Rword2.RTTime,3,1
 TextDisplay1.DEVICE,3,1
 TextDisplay2.DEVICE,3,1
