@@ -1,15 +1,19 @@
 ####set up####
 ##read in data
-dat = read.csv("Output 10_8.csv")
+dat = read.csv("processed 10_17.csv")
 
 ##load libraries
 library(stringr)
 library(dplyr)
 library(tidyr)
 library(wrapr)
+library(sqldf)
 
 ####Drop Unused columns####
-dat = dat[c('ExperimentName', 'Subject', 'cue_target', 'Direction', 'cue_target.1', 'Recall_Response')]
+dat = dat[c('ExperimentName', 'Subject', 'cue_target', 'Direction', 'JOL', 'JOL_RT', 'Recall_prompt', 'Response')]
+
+colnames(dat)[7] = "cue_target.1"
+colnames(dat)[8] = "Recall_Response"
 
 #convert to strings
 dat$cue_target = as.character(dat$cue_target)
@@ -22,7 +26,7 @@ dat = dat %>% separate(cue_target,
 #split cue_target.1 int0 recall cue
 dat = dat %>% separate(cue_target.1, 
                        c("recall_cue", "recall_target"))
-dat = dat[ , -7]
+dat = dat[ , -9]
 
 ##get rows in correct order
 ##first subset by EX Version
@@ -59,4 +63,24 @@ combined = rbind(A, B, C, D)
 combined = combined[ , -c(3:4)]
 
 ####Score recall responses####
-##What I want to do is check whether the contents in column 4 match the contents in column 7
+##What I want to do is check whether the contents in column 5 match the contents in column 7
+#first, convert everything to lowercase
+combined$sorted_JOL_TARGET = tolower(combined$sorted_JOL_TARGET)
+combined$Recall_Response = tolower(combined$Recall_Response)
+
+##make a column denoting the percentage that strings match each other
+temp = sqldf("select *, 
+  max(100.0 * (instr(sorted_JOL_TARGET, Recall_Response) > 0) * length(sorted_JOL_TARGET) / length(Recall_Response),
+      100.0 * (instr(sorted_JOL_TARGET, Recall_Response) > 0) * length(Recall_Response) / length(sorted_JOL_TARGET))
+      percent from combined")
+
+combined$percent_match = temp$percent
+
+#now make a scored column
+combined$scored = as.numeric(combined$percent_match >= 100 & combined$percent_match < 200)
+
+#turn NAs from scored column to zeros
+combined$scored[is.na(combined$scored)] = 0
+
+#Write output to a .csv
+#write.csv(combined, file = "auto score 10_17.csv", row.names = FALSE)
