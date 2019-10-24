@@ -1,6 +1,6 @@
 ####set up####
 ##read in data
-dat = read.csv("processed 10_17.csv")
+dat = read.csv("processed 10_18.csv")
 
 ##load libraries
 library(stringr)
@@ -57,7 +57,8 @@ xd = match(D$recall_cue, D$jol_cue)
 D[c("sorted_JOL_CUE", "sorted_JOL_TARGET")] = (D[xd, c(3:4)])
 
 ##put everything back together
-combined = rbind(A, B, C, D)
+#combined = rbind(A, B, C, D)
+combined = rbind(C, D)
 
 ##drop unused columns
 combined = combined[ , -c(3:4)]
@@ -83,4 +84,4 @@ combined$scored = as.numeric(combined$percent_match >= 100 & combined$percent_ma
 combined$scored[is.na(combined$scored)] = 0
 
 #Write output to a .csv
-#write.csv(combined, file = "auto score 10_17.csv", row.names = FALSE)
+#write.csv(combined, file = "auto score 10_18.csv", row.names = FALSE)

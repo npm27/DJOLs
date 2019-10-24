@@ -5,7 +5,7 @@ library(reshape)
 library(dplyr)
 
 #read in data
-dat = read.csv("raw 10_17.csv")
+dat = read.csv("raw 10_18.csv")
 
 summary(dat)
 
@@ -256,7 +256,8 @@ D2 = D2[ , -c(10:11, 14:17, 19:26, 28:35, 38)]
 D = rbind(D1, D2)
 
 ####Now put everything back together
-combined = rbind(A, B, C, D)
+#combined = rbind(A, B, C, D)
+combined = rbind(C, D)
 
 #Write to file
-#write.csv(combined, file = "processed 10_17.csv", row.names = FALSE)
+write.csv(combined, file = "processed 10_18.csv", row.names = FALSE)

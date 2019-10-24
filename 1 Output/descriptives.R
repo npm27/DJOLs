@@ -5,7 +5,7 @@ options(scipen = 999)
 dat = read.csv("auto score test.csv")
 colnames(dat)[11] = "Recall"
 
-dat$jol = as.numeric(as.character(dat$JOL))
+dat$JOL= as.numeric(as.character(dat$JOL))
 
 summary(dat)
 
