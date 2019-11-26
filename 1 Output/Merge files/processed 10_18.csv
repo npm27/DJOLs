@@ -1,4 +1,9 @@
 "ExperimentName","Subject","Session","Procedure.Block.","Running.Block.","Trial","cue_target","Direction","ListNum","JOL","JOL_RT","Procedure.Trial.","Recall_prompt","Response","Response_RT"
+"D_JOL C 2",115,1,"BlockProc1","Block1",66,"Enough - Full","F",1,"90",4287,"StudyProc3","Enough - ?","full",2943
+"D_JOL C 2",115,1,"BlockProc1","Block1",38,"Sip - Drink","F",2,"92",2668,"StudyProc3","Sip - ?","drink",4570
+"D_JOL C 2",115,1,"BlockProc1","Block1",31,"Cave - Dark","F",3,"83",6689,"StudyProc3","Cave - ?","dark",2228
+"D_JOL C 2",115,1,"BlockProc1","Block1",80,"Seize - Take","F",4,"78",2617,"StudyProc3","Seize - ?","take",6589
+"D_JOL C 2",115,1,"BlockProc1","Block1",7,"Growth - Height","F",5,"height",3667,"StudyProc3","Growth - ?","height",2797
 "D_JOL C 2",115,1,"BlockProc1","Block1",46,"Word - Sentence","F",6,"68",5447,"StudyProc3","Word - ?","sentence",5599
 "D_JOL C 2",115,1,"BlockProc1","Block1",23,"Wasp - Bug","F",7,"70",4723,"StudyProc3","Wasp - ?","bug",2283
 "D_JOL C 2",115,1,"BlockProc1","Block1",84,"Division - Math","F",8,"96",3805,"StudyProc3","Division - ?","math",3405
@@ -74,6 +79,11 @@
 "D_JOL C 2",115,1,"BlockProc1","Block1",40,"Would - Cash","U",78,"0",2187,"StudyProc3","Would - ?","could",6861
 "D_JOL C 2",115,1,"BlockProc1","Block1",59,"Sick - Hide","U",79,"19",6546,"StudyProc3","Sick - ?","hide",5915
 "D_JOL C 2",115,1,"BlockProc1","Block1",32,"Vase - King","U",80,"50",3731,"StudyProc3","Vase - ?","flower",5961
+"D_JOL C 2",139,1,"BlockProc1","Block1",52,"Enough - Full","F",1,"100",2363,"StudyProc3","Enough - ?","more",4472
+"D_JOL C 2",139,1,"BlockProc1","Block1",72,"Sip - Drink","F",2,"100",1856,"StudyProc3","Sip - ?","drink",5017
+"D_JOL C 2",139,1,"BlockProc1","Block1",56,"Cave - Dark","F",3,"100",2602,"StudyProc3","Cave - ?","chore",3821
+"D_JOL C 2",139,1,"BlockProc1","Block1",38,"Seize - Take","F",4,"100",1696,"StudyProc3","Seize - ?","run",6025
+"D_JOL C 2",139,1,"BlockProc1","Block1",67,"Growth - Height","F",5,"100",2234,"StudyProc3","Growth - ?","big",4445
 "D_JOL C 2",139,1,"BlockProc1","Block1",31,"Word - Sentence","F",6,"100",2511,"StudyProc3","Word - ?","phrase",3451
 "D_JOL C 2",139,1,"BlockProc1","Block1",84,"Wasp - Bug","F",7,"100",1925,"StudyProc3","Wasp - ?","sting",2988
 "D_JOL C 2",139,1,"BlockProc1","Block1",75,"Division - Math","F",8,"100",2535,"StudyProc3","Division - ?","from",8907
@@ -149,6 +159,11 @@
 "D_JOL C 2",139,1,"BlockProc1","Block1",50,"Would - Cash","U",78,"100",2585,"StudyProc3","Would - ?","take",7758
 "D_JOL C 2",139,1,"BlockProc1","Block1",54,"Sick - Hide","U",79,"100",1822,"StudyProc3","Sick - ?","sneeze",18289
 "D_JOL C 2",139,1,"BlockProc1","Block1",25,"Vase - King","U",80,"100",2405,"StudyProc3","Vase - ?","tme",3938
+"D_JOL C 2",115,1,"BlockProc2","Block2",20,"Flip - Turn","F",1,"78",30302,"StudyProc5","Flip - ?","turn",2123
+"D_JOL C 2",115,1,"BlockProc2","Block2",21,"Windshield - Car","F",2,"81",2763,"StudyProc5","Windsield - ?","car",2056
+"D_JOL C 2",115,1,"BlockProc2","Block2",53,"Villain - Bad","F",3,"96",2121,"StudyProc5","Villian - ?","bad",1850
+"D_JOL C 2",115,1,"BlockProc2","Block2",84,"Penguin - Bird","F",4,"89",3978,"StudyProc5","Penguin - ?","bird",2904
+"D_JOL C 2",115,1,"BlockProc2","Block2",69,"Actress - Star","F",5,"85",3615,"StudyProc5","Actress - ?","star",2516
 "D_JOL C 2",115,1,"BlockProc2","Block2",38,"Thimble - Thread","F",6,NA,3371,"StudyProc5","Thimble - ?","thamble",11266
 "D_JOL C 2",115,1,"BlockProc2","Block2",82,"Revenge - Even","F",7,"90",6331,"StudyProc5","Revenge - ?","even",2257
 "D_JOL C 2",115,1,"BlockProc2","Block2",29,"Balloon - Pop","F",8,NA,3578,"StudyProc5","Balloon - ?","pop",2038
@@ -224,6 +239,11 @@
 "D_JOL C 2",115,1,"BlockProc2","Block2",39,"Morning - Temperature","U",78,"49",3425,"StudyProc5","Morning - ?","temperature",4586
 "D_JOL C 2",115,1,"BlockProc2","Block2",51,"Children - Mirror","U",79,NA,5079,"StudyProc5","Children - ?","baby",6330
 "D_JOL C 2",115,1,"BlockProc2","Block2",78,"Main - Scar","U",80,NA,2516,"StudyProc5","Main - ?","job",8037
+"D_JOL C 2",139,1,"BlockProc2","Block2",16,"Flip - Turn","F",1,"55",2447,"StudyProc5","Flip - ?","side",3454
+"D_JOL C 2",139,1,"BlockProc2","Block2",36,"Windshield - Car","F",2,"75",3861,"StudyProc5","Windsield - ?","bug",4255
+"D_JOL C 2",139,1,"BlockProc2","Block2",84,"Villain - Bad","F",3,"80",3460,"StudyProc5","Villian - ?","evil",3917
+"D_JOL C 2",139,1,"BlockProc2","Block2",9,"Penguin - Bird","F",4,"45",3731,"StudyProc5","Penguin - ?","birf",2572
+"D_JOL C 2",139,1,"BlockProc2","Block2",85,"Actress - Star","F",5,"60",3720,"StudyProc5","Actress - ?","star",3667
 "D_JOL C 2",139,1,"BlockProc2","Block2",7,"Thimble - Thread","F",6,"90",3313,"StudyProc5","Thimble - ?","arn",11651
 "D_JOL C 2",139,1,"BlockProc2","Block2",60,"Revenge - Even","F",7,"60",8482,"StudyProc5","Revenge - ?","evil",3345
 "D_JOL C 2",139,1,"BlockProc2","Block2",42,"Balloon - Pop","F",8,"60",3600,"StudyProc5","Balloon - ?","pop",3991
@@ -299,6 +319,11 @@
 "D_JOL C 2",139,1,"BlockProc2","Block2",46,"Morning - Temperature","U",78,"80",2205,"StudyProc5","Morning - ?","person",6990
 "D_JOL C 2",139,1,"BlockProc2","Block2",32,"Children - Mirror","U",79,NA,3304,"StudyProc5","Children - ?","school",4928
 "D_JOL C 2",139,1,"BlockProc2","Block2",47,"Main - Scar","U",80,"40",2623,"StudyProc5","Main - ?","task",9974
+"D_JOL D 2",136,1,"BlockProc1","Block1",50,"Enough - Full","F",1,"100",2093,"StudyProc3","Enough - ?","little",5935
+"D_JOL D 2",136,1,"BlockProc1","Block1",63,"Sip - Drink","F",2,"100",3080,"StudyProc3","Sip - ?","drink",2615
+"D_JOL D 2",136,1,"BlockProc1","Block1",16,"Cave - Dark","F",3,"100",2726,"StudyProc3","Cave - ?","dark",2439
+"D_JOL D 2",136,1,"BlockProc1","Block1",71,"Seize - Take","F",4,"0",1843,"StudyProc3","Seize - ?","allow",7924
+"D_JOL D 2",136,1,"BlockProc1","Block1",31,"Growth - Height","F",5,"100",17566,"StudyProc3","Growth - ?","height",2259
 "D_JOL D 2",136,1,"BlockProc1","Block1",79,"Word - Sentence","F",6,"100",2224,"StudyProc3","Word - ?","sentence",4844
 "D_JOL D 2",136,1,"BlockProc1","Block1",30,"Wasp - Bug","F",7,"100",2528,"StudyProc3","Wasp - ?","sting",4067
 "D_JOL D 2",136,1,"BlockProc1","Block1",60,"Division - Math","F",8,"100",1959,"StudyProc3","Division - ?","math",2029
@@ -374,6 +399,11 @@
 "D_JOL D 2",136,1,"BlockProc1","Block1",77,"Would - Cash","U",78,"50",2945,"StudyProc3","Would - ?","make",8727
 "D_JOL D 2",136,1,"BlockProc1","Block1",45,"Sick - Hide","U",79,"0",6189,"StudyProc3","Sick - ?","healthy",30306
 "D_JOL D 2",136,1,"BlockProc1","Block1",49,"Vase - King","U",80,"0",2050,"StudyProc3","Vase - ?","flower",3133
+"D_JOL D 2",136,1,"BlockProc2","Block2",74,"Flip - Turn","F",1,"100",3016,"StudyProc5","Flip - ?","turn",2621
+"D_JOL D 2",136,1,"BlockProc2","Block2",28,"Windshield - Car","F",2,"0",4463,"StudyProc5","Windsield - ?","car",4663
+"D_JOL D 2",136,1,"BlockProc2","Block2",70,"Villain - Bad","F",3,"100",3051,"StudyProc5","Villian - ?","evil",3023
+"D_JOL D 2",136,1,"BlockProc2","Block2",20,"Penguin - Bird","F",4,"100",3678,"StudyProc5","Penguin - ?","bird",2863
+"D_JOL D 2",136,1,"BlockProc2","Block2",47,"Actress - Star","F",5,"100",3251,"StudyProc5","Actress - ?","star",2100
 "D_JOL D 2",136,1,"BlockProc2","Block2",44,"Thimble - Thread","F",6,"90",2481,"StudyProc5","Thimble - ?","thread",3320
 "D_JOL D 2",136,1,"BlockProc2","Block2",40,"Revenge - Even","F",7,"100",4371,"StudyProc5","Revenge - ?","game",8003
 "D_JOL D 2",136,1,"BlockProc2","Block2",8,"Balloon - Pop","F",8,"100",3512,"StudyProc5","Balloon - ?","pop",3920

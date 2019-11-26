@@ -5,7 +5,7 @@ library(reshape)
 library(dplyr)
 
 #read in data
-dat = read.csv("raw 10_17.csv")
+dat = read.csv("raw 10_18.csv")
 
 summary(dat)
 
@@ -21,17 +21,8 @@ D = subset(dat,
 
 ####Start with version A!####
 ##First remove buffer trials
-table(A$Procedure.Trial.)
-
-A.jol = subset(A,
-               A$Procedure.Trial. != "recallproc1" & A$Procedure.Trial. != "recallproc2")
-A.recall = subset(A,
-                  A$Procedure.Trial. == "recallproc1" | A$Procedure.Trial. == "recallproc2")
-
-A.jol = subset(A.jol,
-           A.jol$Trial > 5)
-
-A = rbind(A.jol, A.recall)
+A = subset(A,
+           A$ListNum > 5)
 
 summary(A)
 
@@ -89,15 +80,8 @@ A = rbind(A1, A2)
 
 ####Now do the same for version B####
 ##First remove buffer trials
-B.jol = subset(B,
-               B$Procedure.Trial. != "recallproc1" & B$Procedure.Trial. != "recallproc2")
-B.recall = subset(B,
-                  B$Procedure.Trial. == "recallproc1" | B$Procedure.Trial. == "recallproc2")
-
-B.jol = subset(B.jol,
-               B.jol$Trial > 5)
-
-B = rbind(B.jol, B.recall)
+B = subset(B,
+           B$ListNum > 5)
 
 summary(B)
 
@@ -155,15 +139,8 @@ B = rbind(B1, B2)
 
 ####Now do the same for version C####
 ##First remove buffer trials
-C.jol = subset(C,
-               C$Procedure.Trial. != "recallproc1" & C$Procedure.Trial. != "recallproc2")
-C.recall = subset(C,
-                  C$Procedure.Trial. == "recallproc1" |C$Procedure.Trial. == "recallproc2")
-
-C.jol = subset(C.jol,
-               C.jol$Trial > 5)
-
-C = rbind(C.jol, C.recall)
+C = subset(C,
+           C$ListNum > 5)
 
 summary(C)
 
@@ -221,15 +198,8 @@ C = rbind(C1, C2)
 
 ####Now do the same for D####
 ##First remove buffer trials
-D.jol = subset(D,
-               D$Procedure.Trial. != "recallproc1" & D$Procedure.Trial. != "recallproc2")
-D.recall = subset(D,
-                  D$Procedure.Trial. == "recallproc1" | D$Procedure.Trial. == "recallproc2")
-
-D.jol = subset(D.jol,
-               D.jol$Trial > 5)
-
-D = rbind(D.jol, D.recall)
+D = subset(D,
+           D$ListNum > 5)
 
 summary(D)
 
@@ -286,8 +256,8 @@ D2 = D2[ , -c(10:11, 14:17, 19:26, 28:35, 38)]
 D = rbind(D1, D2)
 
 ####Now put everything back together
-combined = rbind(A, B, C, D)
-#combined = rbind(C, D)
+#combined = rbind(A, B, C, D)
+combined = rbind(C, D)
 
 #Write to file
-write.csv(combined, file = "processed 10_17.csv", row.names = FALSE)
+write.csv(combined, file = "processed 10_18.csv", row.names = FALSE)
