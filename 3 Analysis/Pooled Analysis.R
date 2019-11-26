@@ -22,7 +22,7 @@ source("pairwise_t.R")
 dat1 = read.csv("final data.csv") ##Standard Instructions
 dat2 = read.csv("Delayed final data 10 percent.csv") ##Delayed JOLs
 dat3 = read.csv("T final data 10 percent.csv") ##Response Deadline
-dat4 = read.csv("final data.csv")
+dat4 = read.csv("scored 11_25.csv")
 
 summary(dat1);summary(dat2);summary(dat3);summary(dat4)
 
@@ -40,6 +40,15 @@ dat2 = dat2[c(1,2,3,6,4,5)]
 #reorder dat3 columns
 dat3 = dat3[c(1,2,3,6,4,5)]
 
+#fix dat 4
+dat4 = na.omit(dat4)
+dat4 = dat4[ , -c(5:10)]
+dat4 = dat4[c(2,1,4,5,3)]
+
+colnames(dat4)[2] = "Condition"
+colnames(dat4)[4] = "Recall"
+colnames(dat4)[3] = "Jol"
+
 #add ex number columns
 dat1$ex = rep(1)
 dat2$ex = rep(2)
@@ -47,9 +56,12 @@ dat3$ex = rep(3)
 dat4$ex = rep(4)
 
 ##Stick everything together
-nomiss = rbind(dat1, dat2, dat3, dat4)
+nomiss = rbind(dat1, dat2, dat3)
 summary(nomiss)
 nomiss = nomiss[ , -3] #Drop the list number column
+
+#now add ex 4
+nomiss = rbind(nomiss, dat4)
 
 #Write the pooled data to a csv for later use
 #write.csv(nomiss, file = "Pooled 11_26.csv", row.names = F)
@@ -109,6 +121,11 @@ model$ANOVA$MSE
 
 ####Post Hocs####
 tapply(long.dat$Score, list(long.dat$Direction, long.dat$Task), mean)
+
+tapply(long.dat$Score, list(long.dat$Task, long.dat$ex), mean)
+
+pairwise.t.test.with.t.and.df(long.dat$Score, long.dat$ex,
+                              paired = F, p.adjust.method = 'bonferroni')
 
 ####Post Hocs####
 ##post hocs
