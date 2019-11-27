@@ -89,4 +89,4 @@ ax4.set_title("Unrelated", fontsize = 16)
 ax4.errorbar(x4, y4, yerr=(datU['diff2']), fmt='none', c= 'k', capsize=5)
 
 ##save figure
-fig.savefig('Pooled_smoothed 11_26.png')
+#fig.savefig('Pooled_smoothed 11_26.png')
