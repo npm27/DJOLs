@@ -203,6 +203,20 @@ SEM1 = (temp$conf.int[2] - temp$conf.int[1]) / 3.92
 
 temp;p1;t1;SEM1
 
+#TABLE A3 - EX4
+
+mean(jol2$f);sd(jol2$f);(sd(jol2$f)/sqrt(39)) * 1.96
+mean(jol2$B);sd(jol2$B);(sd(jol2$B)/sqrt(39)) * 1.96
+mean(jol2$S);sd(jol2$S);(sd(jol2$S)/sqrt(39)) * 1.96
+mean(jol2$U);sd(jol2$U);(sd(jol2$U)/sqrt(39)) * 1.96
+
+mean(recall2$f);sd(recall2$f);(sd(recall2$f)/sqrt(39)) * 1.96
+mean(recall2$B);sd(recall2$B);(sd(recall2$B)/sqrt(39)) * 1.96
+mean(recall2$S);sd(recall2$S);(sd(recall2$S)/sqrt(39)) * 1.96
+mean(recall2$U);sd(recall2$U);(sd(recall2$U)/sqrt(39)) * 1.96
+
+t.test(recall2$S, recall2$U, paired = F, p.adjust.methods = "bonferroni")
+
 ####set up for pooled post hocs####
 pooled = read.csv("Pooled 11_26.csv")
 
@@ -233,3 +247,24 @@ colnames(jol2)[3] = "f"
 
 summary(jol2)
 summary(recall2)
+
+temp = t.test(jol2$U, recall2$U, paired = T, p.adjust.methods = "bonferroni")
+p1 = round(temp$p.value, 3)
+t1 = temp$statistic
+SEM1 = (temp$conf.int[2] - temp$conf.int[1]) / 3.92
+
+temp;p1;t1;SEM1
+
+#TABLE A3 - POOLED
+
+mean(jol2$f);sd(jol2$f);(sd(jol2$f)/sqrt(39)) * 1.96
+mean(jol2$B);sd(jol2$B);(sd(jol2$B)/sqrt(39)) * 1.96
+mean(jol2$S);sd(jol2$S);(sd(jol2$S)/sqrt(39)) * 1.96
+mean(jol2$U);sd(jol2$U);(sd(jol2$U)/sqrt(39)) * 1.96
+
+mean(recall2$f);sd(recall2$f);(sd(recall2$f)/sqrt(39)) * 1.96
+mean(recall2$B);sd(recall2$B);(sd(recall2$B)/sqrt(39)) * 1.96
+mean(recall2$S);sd(recall2$S);(sd(recall2$S)/sqrt(39)) * 1.96
+mean(recall2$U);sd(recall2$U);(sd(recall2$U)/sqrt(39)) * 1.96
+
+t.test(jol2$B, jol2$S, paired = F, p.adjust.methods = "bonferroni")
