@@ -145,7 +145,7 @@ means = tapply(long.dat$Score, list(long.dat$Direction, long.dat$Task), mean)
 sds = tapply(long.dat$Score, list(long.dat$Direction, long.dat$Task), sd)
 
 recall = subset(long.dat,
-                long.dat$Task == "Recall")
+                long.dat$Task == "scored")
 jol = subset(long.dat,
              long.dat$Task == "JOL")
 
@@ -158,37 +158,30 @@ colnames(jol2)[3] = "f"
 summary(jol2)
 summary(recall2)
 
-##get SEM
+####Comparing JOLs and Recall rates####
+#forward pairs
 temp = t.test(jol2$f, recall2$f, paired = T, p.adjust.methods = "bonferroni")
 p1 = round(temp$p.value, 3)
 t1 = temp$statistic
 SEM1 = (temp$conf.int[2] - temp$conf.int[1]) / 3.92
 
+#backward pairs
 temp =  t.test(jol2$B, recall2$B, paired = T)
 p2 = round(temp$p.value, 3)
 t2 = temp$statistic
 SEM2 = (temp$conf.int[2] - temp$conf.int[1]) / 3.92
 
+#symmetrical
 temp = t.test(jol2$S, recall2$S, paired = T)
 p3 = round(temp$p.value, 3)
 t3 = temp$statistic
 SEM3 = (temp$conf.int[2] - temp$conf.int[1]) / 3.92
 
+#unrelated
 temp = t.test(jol2$U, recall2$U, paired = T)
 p4 = round(temp$p.value, 3)
 t4 = temp$statistic
 SEM4 = (temp$conf.int[2] - temp$conf.int[1]) / 3.92
-
-output = matrix(NA, nrow = 4, ncol = 8)
-colnames(output) = c("Direction", "Mean JOL", "Mean Recall",
-                     "JOL SD", "Recall SD", "T value", "P value", "SEM")
-
-output[1, ] = c("F", means[2,1], means[2,2], sds[2,1], sds[2,2], t1, p1, SEM1)
-output[2, ] = c("B", means[1,1], means[1,2], sds[1,1], sds[1,2], t2, p2, SEM2)
-output[3, ] = c("S", means[3,1], means[3,2], sds[3,1], sds[3,2], t3, p3, SEM3)
-output[4, ] = c("U", means[4,1], means[4,2], sds[4,1], sds[4,2], t4, p4, SEM4)
-
-#write.csv(output, file = "ex 3 post hocs.csv", row.names = FALSE)
 
 #FIX POST HOCS FOR JOLS/RECALL ACROSS DIRECTION GROUPS
 dat2 = cast(long.dat, Subject ~ Direction, mean)
@@ -203,9 +196,40 @@ sd(dat2$F)
 sd(dat2$S)
 sd(dat2$U)
 
-temp = t.test(dat2$S, dat2$U, paired = T, p.adjust.methods = "bonferroni")
+temp = t.test(dat2$F, dat2$S, paired = T, p.adjust.methods = "bonferroni")
 p1 = round(temp$p.value, 3)
 t1 = temp$statistic
 SEM1 = (temp$conf.int[2] - temp$conf.int[1]) / 3.92
 
-p1;t1;SEM1
+temp;p1;t1;SEM1
+
+####set up for pooled post hocs####
+pooled = read.csv("Pooled 11_26.csv")
+
+#pooled$Recall = pooled$Recall * 100
+
+long.dat2 = melt(pooled, id = c("Subject", 'Condition', "ex", "Direction"))
+
+summary(long.dat2)
+
+colnames(long.dat2)[5] = "Task"
+colnames(long.dat2)[6] = "Score"
+
+dat3 = cast(long.dat2, Subject ~ Direction, mean)
+
+recall = subset(long.dat2,
+                long.dat2$Task == "Recall")
+jol = subset(long.dat2,
+             long.dat2$Task == "JOL")
+
+#jol = jol[ , -5]
+#recall = recall[ , -5]
+
+recall2 = cast(recall[ , -5], Subject ~ Direction, mean)
+jol2 = cast(jol[ , -5], Subject ~ Direction, mean)
+
+colnames(recall2)[3] = "f"
+colnames(jol2)[3] = "f"
+
+summary(jol2)
+summary(recall2)
