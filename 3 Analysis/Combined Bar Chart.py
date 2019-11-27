@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-dat = pd.read_csv("Combined_bar_charts PNOM 2019.csv")
+dat = pd.read_csv("Combined_bar_charts.csv")
 
 #make the 95% confidence intervals
 dat['diff'] = dat['Upper'].sub(dat['Lower']) #get the length of the bars
@@ -43,10 +43,10 @@ r1_conf = r1['diff2']
 ind = np.arange(len(j1_average))  # the x locations for the groups
 width = 0.35 #bar width 
 
-rects1 = ax1.bar(ind - width/2, j1_average, width, yerr = j1_conf, capsize = 3, color = 'dodgerblue', edgecolor = 'k',
+rects1 = ax1.bar(ind - width/2, j1_average, width, yerr = j1_conf, capsize = 3, color = 'white', edgecolor = 'k',
                 label ='JOL')
 
-rects2 = ax1.bar(ind + width/2, r1_average, width, yerr = r1_conf, capsize = 3, color = 'midnightblue', edgecolor = 'k',
+rects2 = ax1.bar(ind + width/2, r1_average, width, yerr = r1_conf, capsize = 3, color = 'grey', edgecolor = 'k',
                 label = 'Recall')
 
 #Make the plot spiffy
@@ -75,10 +75,10 @@ r2_conf = r2['diff2']
 ind = np.arange(len(j2_average))  # the x locations for the groups
 width = 0.35 #bar width 
 
-rects3 = ax2.bar(ind - width/2, j2_average, width, yerr = j2_conf, capsize = 3, color = 'dodgerblue', edgecolor = 'k',
+rects3 = ax2.bar(ind - width/2, j2_average, width, yerr = j2_conf, capsize = 3, color = 'white', edgecolor = 'k',
                 label ='JOL')
 
-rects4 = ax2.bar(ind + width/2, r2_average, width, yerr = r2_conf, capsize = 3, color = 'midnightblue', edgecolor = 'k',
+rects4 = ax2.bar(ind + width/2, r2_average, width, yerr = r2_conf, capsize = 3, color = 'grey', edgecolor = 'k',
                 label = 'Recall')
 
 #Make the plot spiffy
@@ -106,10 +106,10 @@ r3_conf = r3['diff2']
 ind = np.arange(len(j3_average))  # the x locations for the groups
 width = 0.35 #bar width 
 
-rects5 = ax3.bar(ind - width/2, j3_average, width, yerr = j3_conf, capsize = 3, color = 'dodgerblue', edgecolor = 'k',
+rects5 = ax3.bar(ind - width/2, j3_average, width, yerr = j3_conf, capsize = 3, color = 'white', edgecolor = 'k',
                 label ='JOL')
 
-rects6 = ax3.bar(ind + width/2, r3_average, width, yerr = r3_conf, capsize = 3, color = 'midnightblue', edgecolor = 'k',
+rects6 = ax3.bar(ind + width/2, r3_average, width, yerr = r3_conf, capsize = 3, color = 'grey', edgecolor = 'k',
                 label = 'Recall')
 
 #Make the plot spiffy
@@ -137,10 +137,10 @@ r4_conf = r4['diff2']
 ind = np.arange(len(j4_average))  # the x locations for the groups
 width = 0.35 #bar width 
 
-rects7 = ax4.bar(ind - width/2, j4_average, width, yerr = j4_conf, capsize = 3, color = 'dodgerblue', edgecolor = 'k',
+rects7 = ax4.bar(ind - width/2, j4_average, width, yerr = j4_conf, capsize = 3, color = 'white', edgecolor = 'k',
                 label ='JOL')
 
-rects8 = ax4.bar(ind + width/2, r4_average, width, yerr = r4_conf, capsize = 3, color = 'midnightblue', edgecolor = 'k',
+rects8 = ax4.bar(ind + width/2, r4_average, width, yerr = r4_conf, capsize = 3, color = 'grey', edgecolor = 'k',
                 label = 'Recall')
 
 #Make the plot spiffy
@@ -153,4 +153,4 @@ ax4.legend(fontsize = 16)
 ax4.set_ylim([0,100])
 
 ##save figure
-fig.savefig('Combined_bar_chart2.png', dip = 10000)
+#fig.savefig('Combined_bar_chart.png', dip = 10000)

@@ -3,11 +3,11 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-dat = pd.read_csv("conf_pooled_final.csv")
+dat = pd.read_csv("pooledconf.csv")
 
-#dat['Jol_Bin'] = dat['Jol_Bin'].multiply(10)
+dat['Bin'] = dat['Bin'].multiply(10)
 
-dat['diff'] = dat['Upper'].sub(dat['Lower'])
+dat['diff'] = dat['upper'].sub(dat['lower'])
 dat['diff2'] = dat['diff'].div(2)
 
 ##make subsets
@@ -89,4 +89,4 @@ ax4.set_title("Unrelated", fontsize = 16)
 ax4.errorbar(x4, y4, yerr=(datU['diff2']), fmt='none', c= 'k', capsize=5)
 
 ##save figure
-fig.savefig('Pooled_smoothed.png')
+fig.savefig('Pooled_smoothed 11_26.png')
